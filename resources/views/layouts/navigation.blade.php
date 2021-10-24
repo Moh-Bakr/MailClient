@@ -15,6 +15,16 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('mail.send')" :active="request()->routeIs('mail.send')">
+                        {{ __('Send') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('mail.receive')" :active="request()->routeIs('mail.receive')">
+                        {{ __('Recieved') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('mail.create')" :active="request()->routeIs('mail.create')">
+                        {{ __('Create Mail') }}
+                    </x-nav-link>
+
                 </div>
             </div>
 
@@ -39,19 +49,19 @@
 
                     <x-slot name="content">
                         <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-
-                            <x-dropdown-link :href="route('logout')"
-                                             onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </x-dropdown-link>
-                        </form>
                         <form method="POST" action="{{ route('profile') }}">
                             @csrf
                             <x-dropdown-link :href="route('profile')">
                                 {{ __('Profile') }}
+                            </x-dropdown-link>
+                        </form>
+
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <x-dropdown-link :href="route('logout')"
+                                             onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Log Out') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
