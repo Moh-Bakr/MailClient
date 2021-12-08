@@ -1,1 +1,1 @@
-UMail
+Emails can be sent to different emails inside the database, every time a user sends you an email, your inbox refreshes automatically, You can view an email by simply clicking on them, you can archive or reply to its sender. Also, when read, the email turns into gray to differentiate between the read and the unread ones.
